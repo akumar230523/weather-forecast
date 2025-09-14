@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/WeatherForecast.png" type="image/png">
+    <title> Weather Forecast </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>     <!-- Tailwind CSS -->
+    <script src="https://kit.fontawesome.com/3fe022bc1f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- ------------------------------------------------------------------------------- HEADER -->
+    <header class="flex flex-col items-center md:flex-row md:justify-between">
+        <h1> Weather Dashboard </h1>
+        <div id="search" class="flex gap-2">
+            <div id="search-input" class="flex justify-between">
+                <input type="text" placeholder="Search..">
+                <div id="dropdown-div"> </div>
+                <button id="search-city"> <i class="fa fa-search fa-lg"></i> </button>
+            </div>
+            <button id="search-location"> <i class="fa-solid fa-location-dot fa-xl"></i> </button>
+        </div>
+    </header>
+
+    <!-- --------------------------------------------------------------------------------- MAIN -->
+    <main>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Section 1: Today Weather -->
+        <section id="s1" class="flex flex-col flex-wrap sm:flex-row sm:justify-between">
+            <!-- Today weather data -->
+        </section>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -  Section 2: Forecast Weather -->
+        <section id="s2">
+            <h3> 4 - Day Forecast </h3>
+            <div id="forecast" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+                <!-- Forecast weather data -->
+            </div>
+        </section>
+
+    </main>
+    
+</body>
+
+</html>

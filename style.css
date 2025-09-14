@@ -1,0 +1,250 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    /* outline: 1px solid red; */
+}
+
+:root {
+    --b1-color: rgb(0, 0, 0);
+    --b2-color: rgba(0, 0, 0, 0.5);    
+    --w-color: rgb(255, 255, 255);
+    --g-color: rgb(128, 128, 128, 0.2);
+}
+
+body {
+    background-image: url('img/weather-bg.webp');
+    background-size: cover;
+}
+
+/* -------------------------------------------------------------------------------------- HEADER */
+
+header {
+    background-color: var(--b1-color);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+header h1 {
+    color: var(--w-color);
+    font-size: 30px;
+}
+
+header #search {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* ------------------------------------------- */
+
+#search #search-input {
+    background-color: var(--w-color);
+    border-radius: 50px;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+#search-input input {
+    outline: none;
+    width: 90%;
+}
+
+#search-input #dropdown-div {
+    background-color: var(--b2-color);
+    color: var(--w-color);
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    margin-top: 20px;
+    padding: 5px;
+}
+#search-input:hover #dropdown-div {
+    display: block;
+}
+
+#dropdown-div .dropdown-btn {
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+#dropdown-div .dropdown-btn:hover {
+    background-color: var(--b1-color);
+}
+
+#search-input #search-city {
+    cursor: pointer;
+}
+
+/* ------------------------------------------- */
+
+#search #search-location {
+    color: var(--w-color);
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------------------- MAIN */
+
+main {
+    padding: 100px;
+}
+
+@media (max-width: 1024px) {
+    main {
+        padding: 100px 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 120px 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        padding: 120px 20px;
+    }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Section 1: Weather Today */
+
+#s1 {
+    background-color: var(--g-color);
+    border-radius: 20px;
+    color: var(--w-color);
+    margin-bottom: 20px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+#s1 #w_info1 {
+    padding: 20px;
+}
+
+#s1 #w_info1 #temp {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#s1 #w_info1 #city {
+    font-size: 20px;
+}
+
+#s1 #w_info1 #date {
+    font-size: 20px;
+    font-style: italic;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+#s1 #w_icons {
+    padding: 0 20px 20px 20px;
+}
+
+#s1 #w_icons img {
+    cursor: pointer;
+    margin: auto;
+    transition: transform 1.2s ease;
+}
+#s1 #w_icons img:hover {
+    transform: scale(1.2);
+}
+
+#s1 #w_icons figcaption {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+#s1 #w_info2 {
+    background-color: var(--b2-color);
+    border-bottom: 2px solid var(--b1-color);
+    border-top: 2px solid var(--b1-color);
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+#s1 #w_info2 p {
+    cursor: pointer;
+    transition: transform 1.1s ease;
+}
+#s1 #w_info2 p:hover {
+    transform: scale(1.1);
+}
+
+#s1 #w_info2 i {
+    margin-right: 2px;
+}
+
+/* ------------------------------------------- */
+
+@media (max-width: 640px) {
+    #s1 {
+        text-align: center;
+    }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Section 2: Forecast Weather */
+
+#s2 {
+    background: linear-gradient(to bottom, var(--g-color), transparent);
+    border-bottom: 2px solid var(--g-color);
+    padding: 20px;
+    text-align: center;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+#s2 h3 {
+    color: var(--b-color);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+#s2 #forecast {
+    margin-top: 20px;
+}
+
+#s2 #forecast .wf-card {
+    background-color: var(--b2-color);
+    border: 2px solid transparent;
+    border-left: none;
+    border-right: none;
+    border-radius: 20px;
+    color: var(--w-color);
+    padding: 20px;
+    transition: all 0.2s ease;
+}
+#s2 #forecast .wf-card:hover {
+    background-color: transparent;
+    border-color: var(--b1-color);
+}
+
+#s2 #forecast .wf-card .date {
+    font-style: italic;
+}
+
+#s2 #forecast .wf-card .temp {
+    font-size: 25px;
+}
+#s2 #forecast .wf-card:hover .temp {
+    color: var(--b1-color);
+    font-weight: bold;
+}
+
+#s2 #forecast .wf-card img {
+    margin: auto;
+}
+
+/* --------------------------------------------------------------------------------------------- */
